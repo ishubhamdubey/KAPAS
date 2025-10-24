@@ -50,6 +50,12 @@ jobs:
           sed -i "s|src=\"/assets|src=\"/KAPAS/assets|g" dist/index.html || true
           sed -i "s|href=\"/assets|href=\"/KAPAS/assets|g" dist/index.html || true
           sed -i 's|/vite.svg|/KAPAS/vite.svg|g' dist/index.html || true
+          # Also ensure any direct image references in built HTML are rooted under /KAPAS/
+          sed -i 's|src="/images|src="/KAPAS/images|g' dist/index.html || true
+          sed -i "s|src='/images|src='/KAPAS/images|g" dist/index.html || true
+          sed -i 's|href="/images|href="/KAPAS/images|g' dist/index.html || true
+          sed -i "s|href='/images|href='/KAPAS/images|g" dist/index.html || true
+          sed -i 's|url(/images|url(/KAPAS/images|g' dist/index.html || true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
