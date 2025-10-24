@@ -22,7 +22,9 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <Router>
+    // Use Vite's BASE_URL so the router works when the app is served from a sub-path
+    // (GitHub Pages repo site uses /<repo>/). import.meta.env.BASE_URL is set from Vite's `base`.
+    <Router basename={import.meta.env.BASE_URL}>
       <CartProvider>
         <div className="min-h-screen bg-white flex flex-col">
           <Header />
