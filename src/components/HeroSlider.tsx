@@ -17,7 +17,7 @@ const slides: Slide[] = [
   {
     // title: 'New Festive Collection Out Now!',
     // subtitle: 'Trendy, Comfy, and Elegant — Just Like You',
-    image: '/images/heroslider1.jpg',
+  image: encodeURI('images/heroslider1.jpg'),
     fit: 'contain',
     scaleClass: 'scale-100 md:scale-[1.0]',
     bgClass: 'bg-[#F2EFFA]',
@@ -28,7 +28,7 @@ const slides: Slide[] = [
   {
     // title: 'Embrace Traditional Elegance',
     // subtitle: 'Handpicked Designs for Every Occasion',
-    image: '/images/heroslider2.jpg',
+  image: encodeURI('images/heroslider2.jpg'),
     fit: 'cover',
     scaleClass: 'scale-[0.90] md:scale-[1.0]',
     // Nudge focus upward (show more top). Lower than 50% moves crop window up.
@@ -39,7 +39,7 @@ const slides: Slide[] = [
   {
     // title: 'Express Your Style',
     // subtitle: 'Premium Fabrics, Timeless Designs',
-    image: '/images/heroslider3.jpg',
+  image: encodeURI('images/heroslider3.jpg'),
     fit: 'contain',
     scaleClass: 'scale-105 md:scale-[1.0]',
     bgClass: 'bg-[#F2EFFA]',

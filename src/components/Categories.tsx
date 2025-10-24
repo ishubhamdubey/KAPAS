@@ -7,37 +7,37 @@ const categories = [
     id: 1,
     name: 'Short Kurti',
     slug: 'short_kurti',
-    image: '/images/fullsleeve_cream.png',
+  image: encodeURI('images/fullsleeve_cream.png'),
   },
   {
     id: 2,
     name: 'Long Kurti',
     slug: 'long_kurti',
-    image: '/images/category_longkurti.png',
+  image: encodeURI('images/category_longkurti.png'),
   },
   {
     id: 3,
     name: 'Frock',
     slug: 'frock',
-    image: '/images/frock white.png',
+  image: encodeURI('images/frock white.png'),
   },
   {
     id: 4,
     name: 'Full Sleeve Kurti',
     slug: 'full_sleeve',
-    image: '/images/fullsleeve_red.png',
+  image: encodeURI('images/fullsleeve_red.png'),
   },
   {
     id: 5,
     name: 'Sleeveless Kurti',
     slug: 'sleeveless',
-    image: '/images/category_sleevless.jpg',
+  image: encodeURI('images/category_sleevless.jpg'),
   },
   {
     id: 6,
     name: 'Backless Kurti',
     slug: 'backless',
-    image: '/images/category_backless.png',
+  image: encodeURI('images/category_backless.png'),
   },
 ];
 
