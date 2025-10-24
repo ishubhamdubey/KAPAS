@@ -39,6 +39,10 @@ jobs:
         run: npm ci
       - name: Build
         # Pass explicit base so the built asset links point to /KAPAS/ on GitHub Pages
+        # Also inject Supabase VITE_* env vars from repository secrets so the built app can talk to Supabase at runtime
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: npm run build -- --base /KAPAS/
       - name: Setup Pages
         uses: actions/configure-pages@v5
