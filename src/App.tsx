@@ -21,8 +21,12 @@ import FAQPage from './pages/FAQPage';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
+  // Use Vite's base URL so the router works correctly when the app is served from a sub-path
+  // (e.g. https://user.github.io/KAPAS/). Vite exposes the base as import.meta.env.BASE_URL.
+  const basename = import.meta.env.BASE_URL || '/';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <CartProvider>
         <div className="min-h-screen bg-white flex flex-col">
           <Header />
