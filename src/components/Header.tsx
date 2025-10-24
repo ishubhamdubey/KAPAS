@@ -85,6 +85,9 @@ const Header = () => {
               >
                 Categories
               </button>
+              <Link to="/debug" className="text-gray-700 hover:text-[#ff6b81] transition-colors font-medium">
+                Debug
+              </Link>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="text-gray-700 hover:text-[#ff6b81] transition-colors font-medium"
@@ -227,6 +230,9 @@ const Header = () => {
                 >
                   Contact
                 </button>
+                <Link to="/debug" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 hover:text-[#ff6b81] transition-colors font-medium text-left">
+                  Debug
+                </Link>
               </div>
             </div>
           )}
