@@ -38,7 +38,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build
-        run: npm run build
+        # Pass explicit base so the built asset links point to /KAPAS/ on GitHub Pages
+        run: npm run build -- --base /KAPAS/
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
@@ -46,6 +47,13 @@ jobs:
         with:
           # Upload dist folder
           path: './dist'
+      - name: Rewrite asset paths for Pages
+        if: always()
+        run: |
+          # Ensure asset references are rooted under /KAPAS/ on GitHub Pages
+          sed -i 's|%BASE%|/KAPAS/|g' dist/index.html || true
+          sed -i 's|/assets|/KAPAS/assets|g' dist/index.html || true
+          sed -i 's|vite.svg|/KAPAS/vite.svg|g' dist/index.html || true
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
