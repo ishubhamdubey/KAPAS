@@ -54,6 +54,13 @@ const DebugPage = () => {
     <div className="min-h-screen bg-gray-50 py-10 px-4">
       <div className="max-w-3xl mx-auto bg-white rounded-xl shadow p-6 space-y-6">
         <h1 className="text-2xl font-bold">Supabase Debug</h1>
+        {/* Show runtime Vite env values so we can confirm build included them */}
+        <div className="p-3 rounded border bg-gray-50">
+          <div className="text-sm text-gray-700">
+            <div><strong>Built VITE_SUPABASE_URL:</strong> <span className="break-all">{import.meta.env?.VITE_SUPABASE_URL ?? '(not set)'}</span></div>
+            <div><strong>Anon key present:</strong> {Boolean(import.meta.env?.VITE_SUPABASE_ANON_KEY) ? 'yes' : 'no'}</div>
+          </div>
+        </div>
         <div className="space-y-2 text-sm">
           <div>
             <span className="font-semibold">Supabase URL:</span>{' '}
