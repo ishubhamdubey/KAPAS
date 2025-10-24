@@ -99,6 +99,34 @@ const DebugPage = () => {
             <li>After updating .env, restart the dev server to apply changes.</li>
           </ul>
         </div>
+        {/* Image gallery to surface every image in public/images so we can verify hosting */}
+        <div className="mt-6">
+          <h2 className="text-lg font-semibold mb-3">Built images (sanity check)</h2>
+          <p className="text-sm text-gray-600 mb-4">These are the image files bundled into the app's <code>public/images</code>. They use the runtime base URL so they should load when hosted under a subpath.</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              'category_backless.png',
+              'category_longkurti.png',
+              'category_sleevless.jpg',
+              'frock white.png',
+              'frok.png',
+              'fullsleeve_cream.png',
+              'fullsleeve_red.png',
+              'heroslider1.jpg',
+              'heroslider2.jpg',
+              'heroslider3.jpg',
+            ].map((name) => (
+              <div key={name} className="bg-gray-100 rounded overflow-hidden shadow-sm p-2">
+                <img
+                  src={encodeURI(import.meta.env.BASE_URL + 'images/' + name)}
+                  alt={name}
+                  className="w-full h-40 object-contain bg-white"
+                />
+                <div className="text-xs mt-2 text-gray-700 truncate">{name}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
